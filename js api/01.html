@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Mars Weather</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            font-family: "Prompt", sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <center class="mt-5">
+        <h1>สภาพอากาศบนดาวอังคาร</h1>
+    </center>
+    <div class="m-5"> <canvas id="marsChart" width="600" height="300"></canvas></div>
+
+
+    <script>
+
+        const apiURL = 'https://api.nasa.gov/insight_weather/?api_key=DEMO_KEY&feedtype=json&ver=1.0';
+
+        fetch(apiURL)
+            .then(res => res.json())
+            .then(data => {
+                const sol_keys = data.sol_keys;
+                const labels = [];
+                const minTemps = [];
+                const maxTemps = [];
+
+                sol_keys.forEach(sol => {
+                    const solData = data[sol];
+                    if (solData.AT) {
+                        labels.push(`Sol ${sol}`);
+                        minTemps.push(solData.AT.mn);
+                        maxTemps.push(solData.AT.mx);
+                    }
+                });
+
+                const ctx = document.getElementById('marsChart').getContext('2d');
+                new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: labels,
+                        datasets: [
+                            {
+                                label: 'อุณหภูมิต่ำสุด (°C)',
+                                data: minTemps,
+                                borderColor: 'blue',
+                                backgroundColor: 'rgba(54, 162, 235, 0.3)',
+                                fill: true,
+                                tension: 0.3,
+
+                            },
+                            {
+                                label: 'อุณหภูมิสูงสุด (°C)',
+                                data: maxTemps,
+                                borderColor: 'red',
+                                backgroundColor: 'rgba(255, 99, 132, 0.3)',
+                                fill: true,
+                                tension: 0.3,
+
+                            }
+                        ]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: 'อุณหภูมิย้อนหลังบนดาวอังคาร',
+                                font: {
+                                    family: 'Prompt, serif'
+                                }
+                            }
+                        },
+                        scales: {
+                            y: {
+                                title: {
+                                    display: true,
+                                    text: 'อุณหภูมิ (°C)',
+                                    font: {
+                                        family: 'Prompt, serif'
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            })
+            .catch(err => console.error('Error:', err));
+    </script>
+</body>
+
+</html>
