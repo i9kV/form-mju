@@ -25,11 +25,11 @@
 
 
     <script>
-        // const api_key = '';   //ใช้ของตัวเอง
-        // const apiURL = `https://api.nasa.gov/insight_weather/?api_key=${apiKey}&feedtype=json&ver=1.0`;
+        const apiKey = '';   //ใช้ของตัวเอง
+        const apiURL = `https://api.nasa.gov/insight_weather/?api_key=${apiKey}&feedtype=json&ver=1.0`;
 
 
-        const apiURL = 'https://api.nasa.gov/insight_weather/?api_key=DEMO_KEY&feedtype=json&ver=1.0';
+        // const apiURL = 'https://api.nasa.gov/insight_weather/?api_key=DEMO_KEY&feedtype=json&ver=1.0';
 
         fetch(apiURL)
             .then(res => res.json())
