@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>คำร้องขอโอนย้ายสาขาวิชา</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            font-family: "Prompt", sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- /////////////////////////////////////////////////////////////////////////////// -->
+    <nav class="bg-indigo-700 text-white shadow">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-lg md:text-xl font-semibold">แบบฟอร์ม</h1>
+            <ul class="hidden md:flex space-x-6 text-sm">
+                <li><a href="event.html" class="hover:text-yellow-300"> ฟอร์มจองตั๋วกิจกรรม</a></li>
+                <li><a href="healthy.html" class="hover:text-yellow-300"> ฟอร์มสอบถามสุขภาพ</a></li>
+                <li><a href="v.html" class="hover:text-yellow-300">ฟอร์มย้ายสาขา
+
+                    </a></li>
+            </ul>
+        </div>
+    </nav>
+    <!-- /////////////////////////////////////////////////////////////////////////////// -->
+    <center class="mt-7">
+        <h1 class="text-2xl font-bold mb-6 text-center">คำร้องขอโอนย้ายสาขาวิชาต่างคณะ</h1>
+    </center>
+
+    <div class="max-w-3xl mx-auto  p-8 shadow-md rounded mt-8">
+
+
+        <form id="transferForm" class="space-y-4">
+            <div>
+                <label class="block font-medium">วันที่</label>
+                <input type="date" class="w-full border border-gray-300 rounded p-2" required />
+            </div>
+
+            <div>
+                <label class="block font-medium">เรียน คณบดีคณะ (ใหม่)</label>
+                <input type="text" placeholder="เช่น วิทยาศาสตร์" class="w-full border border-gray-300 rounded p-2"
+                    required />
+            </div>
+
+            <div>
+                <label class="block font-medium">ชื่อ - นามสกุล</label>
+                <input type="text" class="w-full border border-gray-300 rounded p-2" required />
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                    <label class="block font-medium">รหัสนักศึกษา</label>
+                    <input type="text" class="w-full border border-gray-300 rounded p-2" required />
+                </div>
+                <div>
+                    <label class="block font-medium">เบอร์มือถือ</label>
+                    <input type="tel" class="w-full border border-gray-300 rounded p-2" required />
+                </div>
+            </div>
+
+            <div>
+                <label class="block font-medium">หลักสูตร</label>
+                <select class="w-full border border-gray-300 rounded p-2" required>
+                    <option value="">-- เลือก --</option>
+                    <option>4 ปี</option>
+                    <option>4 ปีเทียบเข้าเรียน (2 ปี)</option>
+                </select>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                    <label class="block font-medium">ภาค</label>
+                    <select class="w-full border border-gray-300 rounded p-2" required>
+                        <option value="">-- เลือก --</option>
+                        <option>ภาคปกติ</option>
+                        <option>ภาคสมทบ</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block font-medium">สาขาวิชาเดิม</label>
+                    <input type="text" class="w-full border border-gray-300 rounded p-2" />
+                </div>
+            </div>
+
+            <div>
+                <label class="block font-medium">คณะเดิม</label>
+                <input type="text" class="w-full border border-gray-300 rounded p-2" />
+            </div>
+
+            <div>
+                <label class="block font-medium">ขอโอนย้ายไปสาขาวิชา</label>
+                <input type="text" class="w-full border border-gray-300 rounded p-2" />
+            </div>
+
+            <div>
+                <label class="block font-medium">เนื่องจาก</label>
+                <textarea class="w-full border border-gray-300 rounded p-2" rows="3"></textarea>
+            </div>
+
+            <div class="text-center mt-6">
+                <button type="submit" class="bg-indigo-600 text-white px-6 py-2 rounded hover:bg-indigo-700">
+                    ส่งคำร้อง
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("transferForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+            alert("ส่งคำร้องเรียบร้อยแล้ว!");
+        });
+    </script>
+</body>
+
+</html>

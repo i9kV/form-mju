@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event booking</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            font-family: "Prompt", sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- /////////////////////////////////////////////////////////////////////////////// -->
+    <nav class="bg-indigo-700 text-white shadow">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-lg md:text-xl font-semibold">แบบฟอร์ม</h1>
+            <ul class="hidden md:flex space-x-6 text-sm">
+                <li><a href="event.html" class="hover:text-yellow-300"> ฟอร์มจองตั๋วกิจกรรม</a></li>
+                <li><a href="healthy.html" class="hover:text-yellow-300"> ฟอร์มสอบถามสุขภาพ</a></li>
+                <li><a href="v.html" class="hover:text-yellow-300">ฟอร์มย้ายสาขา
+
+                    </a></li>
+            </ul>
+        </div>
+    </nav>
+    <!-- /////////////////////////////////////////////////////////////////////////////// -->
+
+
+
+    <center class="mt-7">
+        <h1>ฟอร์มจองตั๋วกิจกรรม</h1>
+    </center>
+
+    <div class="flex  justify-center w-screen">
+
+        <div class="bg-gray-50  rounded-sm shadow-md p-5  mt-5">
+            <form class="max-w-sm mx-auto" id="evenform">
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="mb-5">
+                        <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                            ชื่อ</label>
+                        <input type="text" id="fname"
+                            class="shadow-xs bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-xs-light"
+                            placeholder="ชื่อ" required />
+                    </div>
+                    <div class="mb-5">
+                        <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">นามสกุล
+                        </label>
+                        <input type="text" id="lname"
+                            class="shadow-xs bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-xs-light"
+                            placeholder="นามสกุล" required />
+                    </div>
+                </div>
+                <!-- ////////////////////////////////////////////////////////////////////////////////////////////-->
+                <div class="mb-5">
+                    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                        เบอร์</label>
+                    <input type="tel" id="phone"
+                        class="shadow-xs bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-xs-light"
+                        required />
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="">
+                        <label for="countries mb-5"
+                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">ประเภทตั๋ว</label>
+                        <select id="ticket"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <option selected>เลือกประเภทตั๋ว</option>
+                            <option value="01">ปกติ</option>
+                            <option value="02">VIP</option>
+                            <option value="03">permium</option>
+                        </select>
+                    </div>
+                    <div class="mb-5">
+                        <label for="text" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                            จำนวน</label>
+                        <input type="number" id="number"
+                            class="shadow-xs bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-xs-light"
+                            required />
+                    </div>
+                </div>
+
+
+
+
+
+                <button type="submit"
+                    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mt-5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    ตกลง</button>
+            </form>
+
+        </div>
+    </div>
+    <div id="modal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+        <div class="bg-white rounded-lg shadow-lg p-6 w-80 text-center">
+            <h2 class="text-xl font-bold mb-4">ผลการตรวจสอบ</h2>
+            <p id="modalMessage" class="mb-6"></p>
+            <button id="closeModal" | class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+                ปิด
+            </button>
+        </div>
+    </div>
+
+    <script>
+        const myForm = document.getElementById("evenform");
+        const modal = document.getElementById("modal");
+        const modalMessage = document.getElementById("modalMessage");
+        const closeModal = document.getElementById("closeModal");
+
+
+        myForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+            checkInputValues();
+        });
+
+        function checkInputValues() {
+            const lname = document.getElementById("lname");
+            const phone = document.getElementById("phone");
+            const ticket = document.getElementById("ticket");
+            const num = document.getElementById("number");
+            const fname = document.getElementById('fname');
+
+            const fnameValue = fname.value;
+            const lnameValue = lname.value;
+            const phoneValue = phone.value;
+            const ticketValue = ticket.value;
+            const numValue = num.value;
+
+
+            closeModal.addEventListener('click', () => {
+                modal.classList.add("hidden");
+                window.location.href = window.location.href;
+            });
+            if (fnameValue.length < 2) {
+                alert('ต้องมีมากกว่า2ตัว');
+                return;
+            }
+            if (lnameValue.length < 2) {
+                alert('ต้องมีมากกว่า2ตัว');
+                return;
+            }
+            if (phoneValue.length > 10 && phoneValue[0] === 0) {
+                alert('ต้องมีไม่เกิน 10 หลัก และขึ้นต้นด้วยเลข 0');
+                return;
+            }
+            if (!/^\d+$/.test(phoneValue)) {
+                alert('กรุณากรอกเฉพาะตัวเลข');
+                return;
+            }
+
+            if (phoneValue.length > 10) {
+                alert('ต้องมีไม่เกิน 10 หลัก');
+                return;
+            }
+
+            if (phoneValue[0] !== '0') {
+                alert('ต้องขึ้นต้นด้วยเลข 0');
+                return;
+            }
+
+
+            if (ticketValue === '01') {
+                if (numValue > 6 || numValue < 1) {
+                    alert('มากกว่า 1 แต่ไม่เกิน 5');
+                    return;
+
+                }
+
+            }
+
+            if (ticketValue === '02' || ticketValue === '03') {
+                if (numValue > 2) {
+                    alert('ห้ามเกิน 2 ใบ');
+                    return;
+                }
+            }
+            showModal("ข้อมูลถูกต้อง! ระบบได้รับคำขอของคุณแล้ว ✅");
+
+
+            // myForm.submit();
+        }
+        function showModal(message) {
+            modalMessage.textContent = message;
+            modal.classList.remove("hidden");
+        }
+
+    </script>
+</body>
+
+</html>
